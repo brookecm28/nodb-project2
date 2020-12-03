@@ -1,7 +1,9 @@
 import React from 'react'
 
-function header () {
+function Header () {
     return (
-        <header className="Header">madlibs</header>
+        <header className="header">madlibs</header>
     )
 }
+
+export default Header
