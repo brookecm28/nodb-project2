@@ -43,7 +43,7 @@ class Existing extends Component {
     handleSubmitBtnClick() {
         const {id, completeStory} = this.props
         const {wordHolder} = this.state  
-        console.log(wordHolder)
+        
         let finalStory = 
             `${completeStory.storyPt1}` + `${wordHolder[0]}` +
             `${completeStory.storyPt2}` + `${wordHolder[1]}` +
@@ -54,17 +54,11 @@ class Existing extends Component {
             `${completeStory.storyPt7}` + `${wordHolder[6]}` +
             `${completeStory.storyPt8}` + `${wordHolder[7]}` +
             `${completeStory.storyPt9}` + `${wordHolder[8]}` +
-            `${completeStory.storyPt10}`
-        
-        console.log('banana')
-        
+            `${completeStory.storyPt10}`       
         this.setState ({
             clicked: true,
             finalStory: finalStory
         })
-            console.log(finalStory)
-            console.log(this.state.clicked)
-            console.log(this.state.finalStory)
         return this.state 
     }
 
@@ -73,7 +67,8 @@ class Existing extends Component {
         let classNameSubmitBtn = this.state.clicked ? 'submitWordsBtnHidden' : 'submitWordsBtnShowing'
         return (
             <div className='inputContainer'>
-                <div className='inputFields'>
+                <div className='middleSection'>
+                  <div className='inputFields'>
                     <input className={classNameInput} id='input1' onChange={(e) => this.handleInputChange(e, 0)} placeholder='adjective' />
                     <input className={classNameInput} id='input2' onChange={(e) => this.handleInputChange(e, 1)} placeholder='plural noun' />
                     <input className={classNameInput} id='input3' onChange={(e) => this.handleInputChange(e, 2)} placeholder='past tense verb' />
@@ -83,12 +78,14 @@ class Existing extends Component {
                     <input className={classNameInput} id='input7' onChange={(e) => this.handleInputChange(e, 6)} placeholder='past tense verb' />
                     <input className={classNameInput} id='input8' onChange={(e) => this.handleInputChange(e, 7)} placeholder='verb ending in -ing' />
                     <input className={classNameInput} id='input9' onChange={(e) => this.handleInputChange(e, 8)} placeholder='emotion' />
-                </div>
+                  </div>
                 <button className={classNameSubmitBtn} onClick={() => this.handleSubmitBtnClick()}>submit words</button>
+                </div>
                 <ExistingChoice 
                   inputs={this.state.wordHolder} 
                   finalStory={this.state.finalStory}
                   clicked={this.state.clicked}
+                //   ggpClicked={this.props.ggpClicked}
                 />
             </div>
         )

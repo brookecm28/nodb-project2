@@ -31,10 +31,10 @@ module.exports = {
         
         //if not already in list:
         if(index === -1) {
-            let newStory = {}
-            newStory.id = storyId
-            newStory.newTitle = title
-            storyList.push(newStory)
+            // let newStory = {}
+            // newStory.id = storyId
+            // newStory.newTitle = title
+            storyList.push(title)
             storyId++           
         } else { //if already in list:
             return res.status(500).send('Title already exists. Please choose a new title.')
@@ -45,16 +45,14 @@ module.exports = {
         const {currentTitle, newTitle} = req.body
 
         const index = storyList.findIndex(element => {
-            console.log(element.newTitle)
-            return currentTitle === element.newTitle
+            
+            return currentTitle === element
         })
 
         if (index === -1) {
             return res.status(404).send('Story does not exist.')
         } else {
-            let updatedStory = storyList[index]
-            updatedStory.newTitle = newTitle
-            storyList.splice(index, 1, updatedStory)
+            storyList.splice(index, 1, newTitle)
         }
         return res.status(200).send(storyList)
     },
@@ -62,7 +60,7 @@ module.exports = {
         const {title} = req.params
 
         const index = storyList.findIndex(element => {
-            return title === element.newTitle
+            return title === element
         })
         
         if (index === -1) {

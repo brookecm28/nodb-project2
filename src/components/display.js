@@ -14,13 +14,10 @@ class Display extends Component {
             clicked: false
         }
         this.handleChoiceButton = this.handleChoiceButton.bind(this)
+        // this.ggpClicker = this.ggpClicker.bind(this)
     }
 
     handleChoiceButton (choice, id) {
-        // this.setState ({
-        //     title: choice,
-        //     id: id             
-        // })
         console.log(choice)
         axios.get(`/api/stories/${choice}`).then(res => {
             this.setState({
@@ -32,8 +29,13 @@ class Display extends Component {
             console.log(this.state.completeStory)
             console.log(this.state.completeStory.storyPt1)
         })
-           
     }
+
+    // ggpClicker = () => {
+    //     this.setState ({
+    //         clicked: false
+    //     })
+    // }
 
     render () {
         let classNameChoiceBtn = this.state.clicked ? 'choiceBtnHidden' : 'choiceBtnShowing'
@@ -58,13 +60,15 @@ class Display extends Component {
                         id="story3"
                         onClick={() => this.handleChoiceButton("Sharks", 2)}>
                     story 3</button>
-                  </div>
+                </div>
                   <Existing 
                     id={this.state.id} 
                     clicked={clickedVal}
                     completeStory={this.state.completeStory}
+                    // ggpClicked={this.ggpClicker()}
                     />
                 </div>
+                
             </div>
         )
     }

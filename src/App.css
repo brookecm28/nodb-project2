@@ -17,6 +17,10 @@
     justify-content: center;
 }
 
+.list {
+    color: white;
+}
+
 .everythingContainer {
     display: block;
     justify-content: center;
@@ -27,6 +31,7 @@
     justify-content: space-around;
     width: 700px;
     margin-top: 50px;
+    margin-left: 50px;
 }
 
 .choiceBtnShowing {
@@ -44,6 +49,12 @@
     visibility: hidden;
 }
 
+.middleSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .inputFields {
     display: flex;
     width: 700px;
@@ -77,7 +88,7 @@
     font-size: 20pt;
     height: 75px;
     width: 450px;
-    margin-left: 125px;
+    /* margin-left: 125px; */
     margin-top: 15px;
 }
 
@@ -85,6 +96,7 @@
     display: flex;
     justify-content: space-around;
     width: 800px;
+    margin-bottom: 50px;
 }
 
 .articleContainer{
@@ -92,10 +104,17 @@
     justify-content: center;
 }
 
+.inputOnly {
+    display: flex;
+    justify-content: center;
+    margin-bottom:30px;
+    margin-top: 0px;
+}
+
 .storyDisplayed {
     color: white;
     text-align: center;
-    height: 400px;
+    height: 300px;
     margin-top: 40px;
     width: 700px;
     font-size: 16pt;
@@ -109,6 +128,7 @@
     margin-bottom: 15px;
     height:35px; 
     width: 175px;
+    font-size: 14pt;
 }
 
 .editBtnsHidden {
@@ -122,4 +142,14 @@
     color: white;
     margin-bottom: 15px;
     height:30px; 
+    font-size: 12pt;
+}
+
+.list {
+    text-align: center;
+    font-size: 18pt;
+}
+
+.titleList {
+    margin: 10px 0;
 }
